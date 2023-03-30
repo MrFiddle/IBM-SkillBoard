@@ -10,7 +10,7 @@ sudo systemctl start mongod
 # https://stackoverflow.com/questions/19331497/set-environment-variables-from-file-of-key-value-pairs
 set -o allexport
 for file in .env setup.env; do
-    if [[ ! -f "$SETUP_PATH/../$file" ]]; then
+    if [ ! -f "$SETUP_PATH/../$file" ]; then
         echo "Configuration file $file not found" >&2
         exit 1
     fi
