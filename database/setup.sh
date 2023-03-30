@@ -28,7 +28,7 @@ mongosh \
 # Restart MongoDB service with authentication enabled
 sudo systemctl stop mongod
 sudo echo "security:
-    authorization: enabled" > /etc/mongod.conf
+    authorization: enabled" >> /etc/mongod.conf
 sudo systemctl start mongod
 
 # Create IBM SkillBoard user
