@@ -23,7 +23,7 @@ mongosh \
     --host $DB_HOST --port $DB_PORT \
     --eval "var DB_ADMIN_USER = '$DB_ADMIN_USER';
         var DB_ADMIN_PASS = '$DB_ADMIN_PASS';" \
-    db_setup/create_admin.js
+    $SETUP_PATH/create_admin.js
 
 # Restart MongoDB service with authentication enabled
 sudo systemctl stop mongod
@@ -39,4 +39,4 @@ mongosh \
     --eval "var DB_NAME = '$DB_NAME';
         var DB_USER = '$DB_USER';
         var DB_PASS = '$DB_PASS';" \
-    db_setup/create_db_and_user.js
+    $SETUP_PATH/create_db_and_user.js
