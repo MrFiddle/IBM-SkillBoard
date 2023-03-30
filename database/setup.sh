@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Get setup file path
 SETUP_PATH="$(dirname $0)"
