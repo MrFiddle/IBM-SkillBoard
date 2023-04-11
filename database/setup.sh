@@ -40,3 +40,13 @@ mongosh \
         var DB_USER = '$DB_USER';
         var DB_PASS = '$DB_PASS';" \
     $SETUP_PATH/create_db_and_user.js
+
+# Create collections (tables)
+mongosh \
+    --host $DB_HOST --port $DB_PORT \
+    --authenticationDatabase $DB_NAME \
+    -u $DB_USER -p $DB_PASS \
+    --eval "var DB_NAME = '$DB_NAME';
+        var DB_USER = '$DB_USER';
+        var DB_PASS = '$DB_PASS';" \
+    $SETUP_PATH/create_collections.js
