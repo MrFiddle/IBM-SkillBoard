@@ -5,10 +5,7 @@ import { UserContext } from "./contexts/UserContext";
 import Dashboard from "./screens/Dashboard";
 
 const RoutesAvailable = () => {
-
-  const {user} = useContext(UserContext);
-
-  console.log(user)
+  const { user } = useContext(UserContext);
 
   if (!user) {
     return (
@@ -23,8 +20,6 @@ const RoutesAvailable = () => {
       </Routes>
     );
   }
-
-  
 };
 
 export default RoutesAvailable;
