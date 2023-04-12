@@ -1,7 +1,26 @@
-import React from "react";
+import {SESSION_KEY} from "../../lib/constants"
+import { useState } from "react";
+import { createContext } from "react";
 
-const UserContext = () => {
-  return <div>UserContext</div>;
+interface UserContext {
+  user: string | null,
+  setUser: (sessionToken: string | null) => null;
+}
+
+interface Props {
+  children: React.ReactNode
+}
+
+export const UserContext = createContext<UserContext>({} as UserContext);
+
+const UserProvider = ({ children }: Props) => {
+  const [user, setUser] = useState(localStorage.getItem(SESSION_KEY));
+  return (
+    //@ts-ignore
+    <UserContext.Provider value={{ user, setUser }}>
+      {children}
+    </UserContext.Provider>
+  );
 };
 
-export default UserContext;
+export default UserProvider;
