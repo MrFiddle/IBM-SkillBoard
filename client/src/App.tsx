@@ -4,29 +4,21 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className="text-red">Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+      <h1 className="text-blue-800">Welcome to IBM Skillboard</h1>
+      <h3 className="text-red-500">By 13th Office</h3>
+      <p className="text-3xl text-yellow-400">
+        Visca el Barca y Visca Catalunya
+      </p>
+      <p>
+        Un dia de partit Al Gol Nord vaig anar Només entrar a la grada Em vaig
+        enamorar El cor em bategava No em preguntis perquè Del Barça soc
+        suporter Sempre t'animaré Alé, alé, alééééé Alé, alé, alééééé Alé, alé,
+        alééééé Alé, alé, alééééé Un dia de partit Al Gol Nord vaig anar Només
+        entrar a la grada Em vaig enamorar El cor em bategava No em preguntis
+        perquè Del Barça soc suporter Sempre t'animaré Alé, alé, alééééé Alé,
+        alé, alééééé Alé, alé, alééééé Alé, alé, alééééé
       </p>
     </div>
   );
