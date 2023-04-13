@@ -1,32 +1,20 @@
-# IBM SkillBoard
-
-## Set up MongoDB
-
-- Create `.env` and `setup.env` from template files `example.env` and `example.setup.env`.
-    - This script runs under the assumption that the MongoDB instance is new.
-    - Populate username and password fields with the new desired values.
-- Install MongoDB.
-- Run `sudo ./database/setup/setup.sh`.
-
-## Set up your bestfriend Ruby!
 Current version working for ruby lang and gemfiles is .ruby-version's file one.
 
 *ruby-3.0.2*
 
-- in !/IBM-SKILLBOARD/backend-dashboard
+in !/IBM-SKILLBOARD/backend-dashboard
 
-    **bundle install** 
-
-
-- will automatically update and install all necessary gems for an api app with Rails
-
-    initial test for connectivity in cmd
-
-    **rails s**
+**bundle install** 
 
 
+will automatically update and install all necessary gems for an api app with Rails
 
-### Basics of models for initial setup of rails
+initial test for connectivity in cmd
+
+**rails s**
+
+
+## Basics of models for initial setup of rails
 There are **5** models according to database's initial setup.
 ```ruby
 #1 which has Category-> id, name
@@ -91,4 +79,4 @@ Rails.application.routes.draw do
   # root "articles#index"
 end
 ```
-Every time we want to access each table's index then we type *i.e.* **https://localhost:3000/api/v1/categories** 
+Every time we want to access each table's index then we type *i.e.* **https://localhost:3000/api/v1/categories**
