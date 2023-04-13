@@ -20,7 +20,7 @@ class Api::V1::UsersController < ApplicationController
     if @user.save
       render json: @user, status: :created, location: @user
     else
-      render json: @user.errors, status: :unprocessable_entity #Might have to update later
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
 
@@ -46,6 +46,6 @@ class Api::V1::UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :employee_id, :role, :email, :position)
+      params.require(:user).permit(:user_name, :user_email, :user_id, :user_position)
     end
 end

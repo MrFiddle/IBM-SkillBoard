@@ -10,13 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_12_053749) do
-  create_table "users", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2023_04_13_025450) do
+  create_table "categories", force: :cascade do |t|
+    t.integer "category_id"
+    t.string "category_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "certificates", force: :cascade do |t|
+    t.string "certificate_name"
+    t.text "certificate_category"
+    t.text "certificate_type"
+    t.float "certificate_industry_compatibility"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
     t.string "name"
     t.string "employee_id"
-    t.string "role"
-    t.text "email"
     t.string "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "team_area"
+    t.string "team_manager"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "user_name"
+    t.text "user_email"
+    t.string "user_id"
+    t.string "user_position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

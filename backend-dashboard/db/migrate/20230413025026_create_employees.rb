@@ -1,10 +1,8 @@
-class CreateUsers < ActiveRecord::Migration[7.0]
+class CreateEmployees < ActiveRecord::Migration[7.0]
   def change
-    create_table :users do |t|
+    create_table :employees do |t|
       t.string :name
       t.string :employee_id
-      t.string :role
-      t.text :email
       t.string :position
 
       t.timestamps

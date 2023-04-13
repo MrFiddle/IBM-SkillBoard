@@ -1,8 +1,0 @@
-#Current version working for ruby lang and gemfiles is .ruby-version's file one.
-#ruby-3.0.2
-
-#!/IBM-SKILLBOARD/backend-dashboard
-bundle install #will automatically update and install all necessary gems for an api app with Rails
-
-#initial test for connectivity in cmd
-rails s
