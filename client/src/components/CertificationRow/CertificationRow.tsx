@@ -1,8 +1,5 @@
 import { Category } from "../../../lib/types";
 import "./CertificationRow.css";
-
-const certificate = {};
-
 interface Props {
   name: string;
   type: string;

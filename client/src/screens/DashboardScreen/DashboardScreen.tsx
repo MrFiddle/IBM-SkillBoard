@@ -1,6 +1,8 @@
 import CertificationRow from "../../components/CertificationRow/CertificationRow";
 import "./DashboardScreen.css";
 
+const certificate = {};
+
 const DashboardScreen = () => {
   return (
     <div className="dashboard-screen">
