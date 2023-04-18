@@ -1,5 +1,5 @@
 const ProfileScreen = () => {
-  return <div>ProfileScreen</div>;
+  return <div className="background-screen">ProfileScreen</div>;
 };
 
 export default ProfileScreen;

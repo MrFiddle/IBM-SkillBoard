@@ -1,5 +1,5 @@
 const MyTeamsScreen = () => {
-  return <div>MyTeamsScreen</div>;
+  return <div className="background-screen">MyTeamsScreen</div>;
 };
 
 export default MyTeamsScreen;

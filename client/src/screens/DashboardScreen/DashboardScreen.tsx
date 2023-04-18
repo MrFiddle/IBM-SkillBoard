@@ -13,7 +13,7 @@ const certificate = {
 };
 
 const DashboardScreen = () => {
-  return <div className="dashboard-screen"></div>;
+  return <div className="background-screen">Dashboard</div>;
 };
 
 export default DashboardScreen;
