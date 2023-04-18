@@ -7,10 +7,20 @@ interface Props {
 const CertificationRow = ({ certificate }: Props) => {
   return (
     <div className="certification-row-general drop-shadow-md gap-40">
-      <p>color</p>
-      <p className="font-medium">{certificate.name}</p>
+      <div className=" w-3 h-3 rounded-md bg-[#001756]"></div>
+      <p className="certification-row-name font-medium w-40">
+        {certificate.name}
+      </p>
       <p>{certificate.type}</p>
-      <p>{certificate.categories.toString()}</p>
+      <ul>
+        {certificate.categories.map((item, i) => {
+          return (
+            <li key={i} className="certification-row-name">
+              - {item.name}
+            </li>
+          );
+        })}
+      </ul>
       <p>69%</p>
     </div>
   );
