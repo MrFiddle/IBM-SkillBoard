@@ -8,8 +8,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 0.9rem;
 }
 
 .certification-row-name {
   white-space: nowrap;
+}
+
+.certification-row-ibm {
+  background-color: #001756;
+}
+.certification-row-industry {
+  background-color: #b40000;
+}
+.certification-row-myteam {
+  background-color: #658eff;
 }

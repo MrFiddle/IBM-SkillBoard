@@ -4,10 +4,26 @@ interface Props {
   certificate: Certificate;
 }
 
+interface Colors {
+  IBM: string;
+  MyTeam: string;
+  Industry: string;
+}
+
+const colors: Colors = {
+  IBM: "certification-row-ibm",
+  MyTeam: "certification-row-myteam",
+  Industry: "certification-row-industry",
+};
+
 const CertificationRow = ({ certificate }: Props) => {
   return (
     <div className="certification-row-general drop-shadow-md gap-40">
-      <div className=" w-3 h-3 rounded-md bg-[#001756]"></div>
+      <div
+        className={` w-3 h-3 rounded-md ${
+          colors[certificate.type as keyof Colors]
+        }`}
+      ></div>
       <p className="certification-row-name font-medium w-40">
         {certificate.name}
       </p>

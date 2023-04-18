@@ -13,11 +13,7 @@ const certificate = {
 };
 
 const DashboardScreen = () => {
-  return (
-    <div className="dashboard-screen">
-      <CertificationRow certificate={certificate} />
-    </div>
-  );
+  return <div className="dashboard-screen"></div>;
 };
 
 export default DashboardScreen;
