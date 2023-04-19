@@ -14,6 +14,9 @@ export interface Category {
   id: string;
   name: string;
 }
+export interface Certificates {
+  certificates: Certificate[];
+}
 export interface User {
   name: string;
   lastName: string;
