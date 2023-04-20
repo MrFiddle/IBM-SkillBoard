@@ -14,17 +14,16 @@ const LoginContainer = () => {
     } else if (!values.email) {
       setMessage("Email is required");
     } else {
-      axios
-        //${import.meta.env.VITE_SERVER_URL}
-        .post(`http://68.183.111.241:3000/api/v1/login`, {
-          email: values.email,
-          password: values.password,
-        })
+      axios("http://68.183.111.241:3000/api/v1/login)",{
+        method: "post",
+        data: {email: values.email, password: values.password},
+        withCredentials: true
+      })
         .then((response) => {
           // localStorage.setItem(SESSION_KEY, response.data.payload.sessionToken);
           // setUser(response.data.payload.sessionToken);
           // navigate("/home");
-          console.log(response.data);
+          console.log(response.data );
         })
         .catch((error) => {
           console.log("error");
