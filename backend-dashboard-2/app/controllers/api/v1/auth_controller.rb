@@ -20,7 +20,7 @@ class Api::V1::AuthController < ApplicationController
     http = Net::HTTP.new(uri.host,uri.port)
     request = Net::HTTP::Get.new(uri.request_uri)
 
-    puts uri
+    puts request
 
     data = JSON.parse(res.body)
 
