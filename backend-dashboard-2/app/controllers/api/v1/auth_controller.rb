@@ -14,7 +14,9 @@ class Api::V1::AuthController < ApplicationController
       'email' => email,
       'password' => password,
     )
-    
+
+    uri = URI.parse("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword")
+
     http = Net::HTTP.new(uri.host,uri.port)
     request = Net::HTTP::Get.new(uri.request_uri)
 
