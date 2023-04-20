@@ -13,7 +13,9 @@ class Api::V1::AuthController < ApplicationController
       'email' => email,
       'password' => password,
     )
-
+    response = http.request(res)
+    puts response.response['set-cookie']
+    
     data = JSON.parse(res.body)
 
     if res.is_a?(Net::HTTPSuccess)
