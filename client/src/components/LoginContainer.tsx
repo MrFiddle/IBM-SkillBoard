@@ -19,7 +19,8 @@ const LoginContainer = () => {
         .post(`http://68.183.111.241:3000/api/v1/login`, {
           email: values.email,
           password: values.password,
-        })
+        },
+        {withCredentials: true})
         .then((response) => {
           // localStorage.setItem(SESSION_KEY, response.data.payload.sessionToken);
           // setUser(response.data.payload.sessionToken);
