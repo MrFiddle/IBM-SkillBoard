@@ -24,12 +24,11 @@ const LoginContainer = () => {
           // localStorage.setItem(SESSION_KEY, response.data.payload.sessionToken);
           // setUser(response.data.payload.sessionToken);
           // navigate("/home");
-          console.log(response);
+          console.log(response.request);
         })
         .catch((error) => {
           console.log("error");
           console.log(error);
-          setMessage(error.response.data.message);
         });
     }
   };
