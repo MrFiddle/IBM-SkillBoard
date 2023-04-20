@@ -21,7 +21,7 @@ class Api::V1::AuthController < ApplicationController
     request = Net::HTTP::Get.new(uri.request_uri)
 
     response = http.request(request)
-    puts response.response['set-cookie']
+    puts response
 
     data = JSON.parse(res.body)
 
