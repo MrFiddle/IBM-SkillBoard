@@ -6,18 +6,27 @@ class Api::V1::AuthController < ApplicationController
     password = params[:password]
 
     uri = URI("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword")
+    
+    http = Net::HTTP.new(uri.host,uri.port)
+    request = Net::HTTP::Get.new(uri.request_uri)
 
-    res = Net::HTTP.post_form(
-      uri,
-      'key' => ENV['FIREBASE_KEY'],
-      'email' => email,
-      'password' => password,
-    )
+    request.set_form_data({'key'=>ENV['FIREBASE_KEY'], 'email' => email, 'password' => password})
+    # res = Net::HTTP.post_form(
+    #   uri,
+    #   'key' => ENV['FIREBASE_KEY'],
+    #   'email' => email,
+    #   'password' => password,
+    # )
+
+
+    respond = http.request(request)
+
+    puts respond
 
     data = JSON.parse(res.body)
 
     if res.is_a?(Net::HTTPSuccess)
-      puts data['idToken']
+      puts res.get_fields('set-cookie')
       session[:user_id] = data['localId']
       render status: :ok, json: {idToken: data['idToken']}
     else
