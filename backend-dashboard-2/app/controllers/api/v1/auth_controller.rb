@@ -18,8 +18,7 @@ class Api::V1::AuthController < ApplicationController
 
     if res.is_a?(Net::HTTPSuccess)
       session[:user_id] = data['localId']
-      puts "Headers: #{data}"
-      head :ok
+      head :ok, :data
     else
       render status: :unauthorized, json: { error: "Bad login credentials" }
     end
