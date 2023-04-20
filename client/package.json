@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "http-server -a 0.0.0.0 -p 8000",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
