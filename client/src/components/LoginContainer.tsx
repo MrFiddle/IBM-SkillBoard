@@ -15,7 +15,8 @@ const LoginContainer = () => {
       setMessage("Email is required");
     } else {
       axios
-        .post(`${import.meta.env.VITE_SERVER_URL}api/v1/login`, {
+        //${import.meta.env.VITE_SERVER_URL}
+        .post(`http://68.183.111.241:3000/api/v1/login`, {
           email: values.email,
           password: values.password,
         })
@@ -23,7 +24,7 @@ const LoginContainer = () => {
           // localStorage.setItem(SESSION_KEY, response.data.payload.sessionToken);
           // setUser(response.data.payload.sessionToken);
           // navigate("/home");
-          console.log(response.headers["Set-Cookie"]);
+          console.log(response.headers["set-cookie"]);
         })
         .catch((error) => {
           console.log("error");
