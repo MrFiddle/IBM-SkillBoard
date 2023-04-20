@@ -6,7 +6,7 @@ class Api::V1::AuthController < ApplicationController
     password = params[:password]
 
     uri = URI("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword")
-    http = Net::HTTP.new(uri.host,uri.port)
+    
 
     res = Net::HTTP.post_form(
       uri,
@@ -14,6 +14,10 @@ class Api::V1::AuthController < ApplicationController
       'email' => email,
       'password' => password,
     )
+    
+    http = Net::HTTP.new(uri.host,uri.port)
+    request = Net::HTTP::Get.new(uri.request_uri)
+
     response = http.request(res)
     puts response.response['set-cookie']
 
