@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Login from "./Login/Login";
 import { Credentials } from "../../lib/types";
+import axios from "axios";
 
 const LoginContainer = () => {
   const [message, setMessage] = useState<string>("");
@@ -13,10 +14,23 @@ const LoginContainer = () => {
     } else if (!values.email) {
       setMessage("Email is required");
     } else {
-      setMessage("Todo gud");
+      axios
+        .post(`${import.meta.env.VITE_SERVER_URL}api/v1/login`, {
+          email: values.email,
+          password: values.password,
+        })
+        .then((response) => {
+          // localStorage.setItem(SESSION_KEY, response.data.payload.sessionToken);
+          // setUser(response.data.payload.sessionToken);
+          // navigate("/home");
+          console.log(response.headers["Set-Cookie"]);
+        })
+        .catch((error) => {
+          console.log("error");
+          console.log(error);
+          setMessage(error.response.data.message);
+        });
     }
-
-    console.log(values);
   };
 
   return <Login handleLogin={handleLogin} message={message} />;
