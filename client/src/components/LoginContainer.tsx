@@ -20,12 +20,12 @@ const LoginContainer = () => {
           email: values.email,
           password: values.password,
         },
-        {withCredentials: true})
+        {withCredentials: true},)
         .then((response) => {
           // localStorage.setItem(SESSION_KEY, response.data.payload.sessionToken);
           // setUser(response.data.payload.sessionToken);
           // navigate("/home");
-          console.log(response.data );
+          console.log(response.headers["set-cookie"]);
         })
         .catch((error) => {
           console.log("error");
