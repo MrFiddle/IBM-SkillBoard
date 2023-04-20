@@ -18,7 +18,6 @@ class Api::V1::AuthController < ApplicationController
 
     if res.is_a?(Net::HTTPSuccess)
       puts res.body
-      puts data['idToken']
       session[:user_id] = data['localId']
       render status: :ok, json: {idToken: data['idToken']}
     else
