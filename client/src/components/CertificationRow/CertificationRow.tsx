@@ -19,7 +19,6 @@ const colors: Colors = {
 const CertificationRow = ({ certificate }: Props) => {
   return (
     <div className="certification-row-general drop-shadow-md">
-
       <div>
         <div
           className={` w-3 h-3 rounded-md ${
@@ -28,9 +27,7 @@ const CertificationRow = ({ certificate }: Props) => {
         />
       </div>
 
-      <p className="certification-row-name font-medium">
-        {certificate.name}
-      </p>
+      <p className="certification-row-name font-medium">{certificate.name}</p>
 
       <p>{certificate.type}</p>
 
@@ -45,7 +42,6 @@ const CertificationRow = ({ certificate }: Props) => {
       </ul>
 
       <p>69%</p>
-
     </div>
   );
 };

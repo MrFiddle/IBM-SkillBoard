@@ -1,9 +1,8 @@
-import React from 'react'
-import DashboardTable from './DashboardTable'
-import { Certificates } from '../../../lib/types'
+import React from "react";
+import DashboardTable from "./DashboardTable/DashboardTable";
+import { Certificates } from "../../lib/types";
 
 const DashboardTableContainer = () => {
-
   const certificates = [
     {
       id: "1",
@@ -36,7 +35,7 @@ const DashboardTableContainer = () => {
       expiration_date: "Feb 14th, 2099",
     },
     {
-      id: "1",
+      id: "4",
       name: "SCRUM Master Certificate",
       type: "IBM",
       categories: [
@@ -46,7 +45,7 @@ const DashboardTableContainer = () => {
       expiration_date: "Feb 14th, 2099",
     },
     {
-      id: "2",
+      id: "5",
       name: "SCRUM Master Certificate",
       type: "IBM",
       categories: [
@@ -56,7 +55,7 @@ const DashboardTableContainer = () => {
       expiration_date: "Feb 14th, 2099",
     },
     {
-      id: "3",
+      id: "6",
       name: "SCRUM Master Certificate",
       type: "IBM",
       categories: [
@@ -66,7 +65,7 @@ const DashboardTableContainer = () => {
       expiration_date: "Feb 14th, 2099",
     },
     {
-      id: "1",
+      id: "7",
       name: "SCRUM Master Certificate",
       type: "IBM",
       categories: [
@@ -76,7 +75,7 @@ const DashboardTableContainer = () => {
       expiration_date: "Feb 14th, 2099",
     },
     {
-      id: "2",
+      id: "8",
       name: "SCRUM Master Certificate",
       type: "IBM",
       categories: [
@@ -86,7 +85,7 @@ const DashboardTableContainer = () => {
       expiration_date: "Feb 14th, 2099",
     },
     {
-      id: "3",
+      id: "9",
       name: "SCRUM Master Certificate",
       type: "IBM",
       categories: [
@@ -96,7 +95,7 @@ const DashboardTableContainer = () => {
       expiration_date: "Feb 14th, 2099",
     },
     {
-      id: "1",
+      id: "10",
       name: "SCRUM Master Certificate",
       type: "IBM",
       categories: [
@@ -106,7 +105,7 @@ const DashboardTableContainer = () => {
       expiration_date: "Feb 14th, 2099",
     },
     {
-      id: "2",
+      id: "11",
       name: "SCRUM Master Certificate",
       type: "IBM",
       categories: [
@@ -116,7 +115,7 @@ const DashboardTableContainer = () => {
       expiration_date: "Feb 14th, 2099",
     },
     {
-      id: "3",
+      id: "12",
       name: "SCRUM Master Certificate",
       type: "IBM",
       categories: [
@@ -125,10 +124,9 @@ const DashboardTableContainer = () => {
       ],
       expiration_date: "Feb 14th, 2099",
     },
-  ]
+  ];
 
-  return <DashboardTable certificates={{certificates}}/>
-}
+  return <DashboardTable certificates={{ certificates }} />;
+};
 
-export default DashboardTableContainer
-
+export default DashboardTableContainer;
