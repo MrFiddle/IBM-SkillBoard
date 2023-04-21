@@ -1,0 +1,14 @@
+.DashboardTable_Filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.DashboardTable_Filters > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    max-width: 20%;
+}

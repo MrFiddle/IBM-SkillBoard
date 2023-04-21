@@ -18,16 +18,22 @@ const colors: Colors = {
 
 const CertificationRow = ({ certificate }: Props) => {
   return (
-    <div className="certification-row-general drop-shadow-md gap-40">
-      <div
-        className={` w-3 h-3 rounded-md ${
-          colors[certificate.type as keyof Colors]
-        }`}
-      ></div>
-      <p className="certification-row-name font-medium w-40">
+    <div className="certification-row-general drop-shadow-md">
+
+      <div>
+        <div
+          className={` w-3 h-3 rounded-md ${
+            colors[certificate.type as keyof Colors]
+          }`}
+        />
+      </div>
+
+      <p className="certification-row-name font-medium">
         {certificate.name}
       </p>
+
       <p>{certificate.type}</p>
+
       <ul>
         {certificate.categories.map((item, i) => {
           return (
@@ -37,7 +43,9 @@ const CertificationRow = ({ certificate }: Props) => {
           );
         })}
       </ul>
+
       <p>69%</p>
+
     </div>
   );
 };
