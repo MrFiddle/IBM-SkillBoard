@@ -33,10 +33,7 @@ module BackendDashboard2
     # config.eager_load_paths << Rails.root.join("extras")
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
-    config.middleware.insert_after(ActionDispatch::Cookies, Rack::Session::Cookie, {
-      key: '_backend_dashboard2_session',
-      same_site: :lax
-    })
+
 
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
@@ -44,3 +41,7 @@ module BackendDashboard2
     config.api_only = true
   end
 end
+    config.middleware.insert_after(ActionDispatch::Cookies, Rack::Session::Cookie, {
+      key: '_backend_session_response_alyxwwashere',
+      same_site: :lax
+    })
