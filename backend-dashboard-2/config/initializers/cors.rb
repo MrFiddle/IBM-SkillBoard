@@ -15,10 +15,10 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       credentials: true,
       expose: ['Authorization']
 
-      if request.headers['HTTP_ORIGIN']
-        # Set the Access-Control-Allow-Origin header to the HTTP_ORIGIN of the request
-        # This will allow the requesting domain to access the API
-        headers['Access-Control-Allow-Origin'] = request.headers['HTTP_ORIGIN']
-      end
+    if request.headers['HTTP_ORIGIN']
+      # Set the Access-Control-Allow-Origin header to the HTTP_ORIGIN of the request
+      # This will allow the requesting domain to access the API
+      headers['Access-Control-Allow-Origin'] = request.headers['HTTP_ORIGIN']
+    end
   end
 end
