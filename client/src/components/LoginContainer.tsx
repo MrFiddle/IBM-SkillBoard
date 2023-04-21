@@ -25,7 +25,7 @@ const LoginContainer = () => {
           // localStorage.setItem(SESSION_KEY, response.data.payload.sessionToken);
           // setUser(response.data.payload.sessionToken);
           // navigate("/home");
-          console.log("workingu? alo?");
+          console.log("response.data");
         })
         .catch((error) => {
           console.log("error");
