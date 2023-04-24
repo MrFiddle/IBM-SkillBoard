@@ -1,0 +1,29 @@
+.team-row-general {
+  width: 100%;
+  height: 3.5rem;
+  background: #f4f4f4;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.9rem;
+}
+
+.team-row-general > * {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.team-row-profile-button {
+  width: 80%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.team-row-profile-button:hover {
+  font-weight: bold;
+}
