@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins ['http://localhost:5173','http://68.183.111.241:8080']
+    origins ENV["REACT_ROUTE"].split(",")
 
     resource "*",
       headers: :any,
