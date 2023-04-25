@@ -6,7 +6,7 @@ const MyTeamsScreen = () => {
     name: "Juan Pablo",
     lastName: "Perez Duran",
     email: "jppd@ibm.mx",
-    rol: "Front-End Developer",
+    role: "Front-End Developer",
   };
 
   return (
