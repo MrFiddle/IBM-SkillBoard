@@ -19,15 +19,7 @@ export interface Certificates {
 }
 export interface User {
   name: string;
-  lastName: string;
-  email: string;
-  rol: string;
-}
-
-export interface UserInfo {
-  name: string;
   last_name: string;
-  role: string;
-  manager: string;
   email: string;
+  role: string;
 }
