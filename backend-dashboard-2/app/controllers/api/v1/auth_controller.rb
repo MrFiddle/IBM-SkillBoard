@@ -6,7 +6,7 @@ class Api::V1::AuthController < ApplicationController
     password = params[:password]
 
     uri = URI("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword")
-
+        
     res = Net::HTTP.post_form(
       uri,
       'key' => ENV['FIREBASE_KEY'],
@@ -18,7 +18,7 @@ class Api::V1::AuthController < ApplicationController
 
     if res.is_a?(Net::HTTPSuccess)
       session[:user_id] = data['localId']
-      head :ok
+      render status: :ok, json: {idToken: data['idToken']}
     else
       render status: :unauthorized, json: { error: "Bad login credentials" }
     end

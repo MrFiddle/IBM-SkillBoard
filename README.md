@@ -89,8 +89,8 @@ Note: if an endpoint is not listed here, a complete list can be retrieved by run
         ```json
         JSON body:
             {
-                "email": "july@ibm.com",
-                "password": "abc123"
+                "email": "maria@ibm.com",
+                "password": "password"
             }
         ```
     - Response
