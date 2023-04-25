@@ -21,7 +21,6 @@ Bundler.require(*Rails.groups)
 
 module BackendDashboard2
   class Application < Rails::Application
-    puts "loaded"
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
@@ -34,7 +33,6 @@ module BackendDashboard2
     # config.eager_load_paths << Rails.root.join("extras")
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
-    config.session_store :cookie_store, key: '_ibm_session', cookie_options: { same_site: :lax }
 
 
     # Only loads a smaller set of middleware suitable for API only apps.
