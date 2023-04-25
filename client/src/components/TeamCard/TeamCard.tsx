@@ -1,8 +1,13 @@
-import Header from "../../components/Header/Header";
-import TeamRow from "../../components/TeamRow/TeamRow";
-import TeamCard from "../../components/TeamCard/TeamCard";
+import React from "react";
+import { Team } from "../../../lib/types";
+import TeamRow from "../TeamRow/TeamRow";
+import "./TeamCard.css";
 
-const MyTeamsScreen = () => {
+interface Props {
+  team: Team;
+}
+
+const TeamCard = ({ team }: Props) => {
   const dummyData = [
     {
       id: "1",
@@ -23,7 +28,7 @@ const MyTeamsScreen = () => {
       name: "Juan Pablo",
       last_name: "Perez Duran",
       email: "juan@ibm.mx",
-      role: "UX/UI Designer",
+      role: "Product Designer",
     },
     {
       id: "4",
@@ -41,18 +46,18 @@ const MyTeamsScreen = () => {
     },
   ];
 
-  const dummyData2 = {
-    id: "2",
-    team_name: "Team A",
-  };
-
   return (
-    <div className="background-screen">
-      <Header title={"My Teams"} />
-      {/* <TeamRow user={dummyData} /> */}
-      <TeamCard team={dummyData2} />
+    <div className="team-card-general drop-shadow-md">
+      <div className="flex flex-row justify-start w-full">
+        <h2 className="font-bold text-[1.4rem]">{team.team_name}</h2>
+      </div>
+      <div className="flex flex-col justify-start w-full overflow-auto">
+        {dummyData.map((user) => (
+          <TeamRow user={user} />
+        ))}
+      </div>
     </div>
   );
 };
 
-export default MyTeamsScreen;
+export default TeamCard;
