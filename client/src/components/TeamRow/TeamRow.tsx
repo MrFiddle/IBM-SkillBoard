@@ -9,7 +9,7 @@ interface Props {
 const TeamRow = ({ user }: Props) => {
   return (
     <div className="team-row-general drop-shadow-md">
-      <div className="flex flex-row w-[15%] justify-start ml-[15px]">
+      <div className="flex flex-row w-[20%] justify-start ml-[15px]">
         <p>{user.role}</p>
       </div>
 
@@ -17,7 +17,7 @@ const TeamRow = ({ user }: Props) => {
         <p>{user.name}</p>
       </div>
 
-      <div className="flex flex-row w-[15%] justify-end mr-[15px]">
+      <div className="flex flex-row w-[20%] justify-end mr-[15px]">
         <div className="team-row-profile-button">
           <p className="cursor-pointer">View Profile</p>
         </div>

@@ -11,12 +11,12 @@
 }
 
 .team-row-general > * {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 
 .team-row-profile-button {
-  width: 80%;
+  width: 60%;
   height: 30px;
   border-radius: 10px;
   background-color: #f4f4f4;

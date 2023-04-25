@@ -47,9 +47,11 @@ const MyTeamsScreen = () => {
   };
 
   return (
-    <div className="background-screen">
+    <div className="background-screen overflow-auto">
       <Header title={"My Teams"} />
       {/* <TeamRow user={dummyData} /> */}
+      <TeamCard team={dummyData2} />
+      <TeamCard team={dummyData2} />
       <TeamCard team={dummyData2} />
     </div>
   );
