@@ -10,7 +10,7 @@ const TeamRow = ({ user }: Props) => {
   return (
     <div className="team-row-general drop-shadow-md">
       <div className="flex flex-row w-[15%] justify-start ml-[15px]">
-        <p>{user.rol}</p>
+        <p>{user.role}</p>
       </div>
 
       <div className="flex flex-row w-[70%] justify-start ml-[15px]">
