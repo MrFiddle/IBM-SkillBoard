@@ -1,9 +1,8 @@
-import Header from "../../components/Header/Header";
-import TeamRow from "../../components/TeamRow/TeamRow";
-import TeamCard from "../../components/TeamCard/TeamCard";
+import React from "react";
+import TeamCard from "../TeamCard/TeamCard";
 
-const MyTeamsScreen = () => {
-  const dummyData = [
+const TeamTable = () => {
+  const employees = [
     {
       id: "1",
       name: "Emilio",
@@ -23,7 +22,7 @@ const MyTeamsScreen = () => {
       name: "Juan Pablo",
       last_name: "Perez Duran",
       email: "juan@ibm.mx",
-      role: "UX/UI Designer",
+      role: "Product Designer",
     },
     {
       id: "4",
@@ -40,20 +39,7 @@ const MyTeamsScreen = () => {
       role: "Back-End Developer",
     },
   ];
-
-  const dummyData2 = {
-    id: "2",
-    team_name: "Team A",
-  };
-
-  return (
-    <div className="background-screen overflow-auto">
-      <Header title={"My Teams"} />
-      <TeamCard team={dummyData2} />
-      <TeamCard team={dummyData2} />
-      <TeamCard team={dummyData2} />
-    </div>
-  );
+  return <div>TeamTable</div>;
 };
 
-export default MyTeamsScreen;
+export default TeamTable;

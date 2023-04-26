@@ -8,7 +8,7 @@ interface Props {
 }
 
 const TeamCard = ({ team }: Props) => {
-  const dummyData = [
+  const employees = [
     {
       id: "1",
       name: "Emilio",
@@ -52,7 +52,7 @@ const TeamCard = ({ team }: Props) => {
         <h2 className="font-bold text-[1.2rem]">{team.team_name}</h2>
       </div>
       <div className="flex flex-col justify-start w-full overflow-scroll team-card-employees">
-        {dummyData.map((user) => (
+        {employees.map((user) => (
           <TeamRow user={user} />
         ))}
       </div>
