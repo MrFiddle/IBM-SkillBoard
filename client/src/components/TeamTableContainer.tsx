@@ -1,11 +1,4 @@
-import { Team, User } from "../../lib/types";
 import TeamTable from "./TeamTable/TeamTable";
-
-export interface TeamWithEmployeesManager {
-  team: Team;
-  employees: User[];
-  manager: User;
-}
 
 const TeamTableContainer = () => {
   const teams = [

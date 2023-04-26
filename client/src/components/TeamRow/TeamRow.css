@@ -11,6 +11,8 @@
 }
 
 .team-row-general > * {
+  display: flex;
+  flex-direction: row;
   font-size: 0.9rem;
   font-weight: 400;
 }

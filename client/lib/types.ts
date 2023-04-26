@@ -29,3 +29,9 @@ export interface Team {
   id: string;
   team_name: string;
 }
+
+export interface TeamWithEmployeesManager {
+  team: Team;
+  employees: User[];
+  manager: User;
+}

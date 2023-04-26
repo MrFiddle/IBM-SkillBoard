@@ -1,4 +1,4 @@
-import { TeamWithEmployeesManager } from "../TeamTableContainer";
+import { TeamWithEmployeesManager } from "../../../lib/types";
 import TeamRow from "../TeamRow/TeamRow";
 import "./TeamCard.css";
 
