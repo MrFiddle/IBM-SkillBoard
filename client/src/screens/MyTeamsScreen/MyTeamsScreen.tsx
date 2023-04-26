@@ -1,19 +1,11 @@
 import Header from "../../components/Header/Header";
-import TeamRow from "../../components/TeamRow/TeamRow";
+import TeamTableContainer from "../../components/TeamTableContainer";
 
 const MyTeamsScreen = () => {
-  const dummyData = {
-    id: "iddummyjijijijiji",
-    name: "Juan Pablo",
-    last_name: "Perez Duran",
-    email: "jppd@ibm.mx",
-    role: "Front-End Developer",
-  };
-
   return (
-    <div className="background-screen">
+    <div className="background-screen overflow-auto">
       <Header title={"My Teams"} />
-      <TeamRow user={dummyData} />
+      <TeamTableContainer />
     </div>
   );
 };

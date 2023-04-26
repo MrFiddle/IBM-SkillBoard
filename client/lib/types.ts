@@ -28,7 +28,8 @@ export interface Team {
   team_name: string;
 }
 
-export interface TeamWithManager {
+export interface TeamWithEmployeesManager {
   team: Team;
+  employees: User[];
   manager: User;
 }
