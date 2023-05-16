@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users
-      resources :employees
-      resources :certificates
+      resources :employees do
+        get "viewer", on: :collection
+      end
+      resources :certificates do
+        post 'mass_create', on: :collection
+      end
       resources :manager_teams
       resources :employee_teams
       resources :teams
@@ -14,7 +18,6 @@ Rails.application.routes.draw do
 
       post "login", to: "auth#login"
       post "logout", to: "auth#logout"
-      get "viewer", to: "employees#viewer"
 
       end
   end

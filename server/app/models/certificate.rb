@@ -4,6 +4,7 @@ class Certificate
 
   field :name, type: String
   field :type, type: String
+  field :issue_date, type: Date
   field :expiration_date, type: Date
 
   has_many :certificate_employees, class_name: 'CertificateEmployee', foreign_key: 'certificate_id'
@@ -25,6 +26,7 @@ class Certificate
       id: self._id.to_s,
       name: self.name,
       type: self.type,
+      issue_date: self.issue_date,
       expiration_date: self.expiration_date,
     }
   end
