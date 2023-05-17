@@ -13,6 +13,7 @@ const TeamCard = ({ team }: Props) => {
         <h2 className="font-bold text-[1.2rem]">{team.team.name}</h2>
       </div>
       <div className="flex flex-col justify-start w-full overflow-y-scroll team-card-employees">
+        <TeamRow user={team.manager} />
         {team.employees.map((user, index) => (
           <TeamRow user={user} key={index} />
         ))}
