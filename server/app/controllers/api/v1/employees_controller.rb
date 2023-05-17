@@ -11,9 +11,8 @@ class Api::V1::EmployeesController < ApplicationController
 
   # GET /employees/1
   def show
-    @employee = Employee.find(params[:id])
-    #@employee = Employee.find_by(email: params[:id]+"@ibm.com")
-    render json: { employee: @employee.info, teams: @employee.teams, certificates: @employee.certificates }
+    @employee = Employee.find_by(email: params[:id]+"@ibm.com")
+    render json: { employee: @employee.info, teams: @employee.teamsWithManager, certificates: @employee.certificates }
   end
 
   # POST /employees
