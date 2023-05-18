@@ -14,14 +14,13 @@ const TeamTableContainer = () => {
 
   const { isLoading, error, data } = useQuery(["myteamviewer"], fetchDetails);
 
-  if (isLoading) {
+  if (isLoading || !data) {
     return <Loading />;
   }
 
   if (error) {
     return <p>error</p>;
   }
-  console.log(data);
 
   return <TeamTable teams={data.teams} />;
 };
