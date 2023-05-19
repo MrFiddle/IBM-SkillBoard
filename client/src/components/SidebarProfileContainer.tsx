@@ -14,7 +14,7 @@ const SidebarProfileContainer = () => {
 
   const { isLoading, error, data } = useQuery(["viewer"], fetchDetails);
 
-  if (isLoading) {
+  if (isLoading || !data) {
     return <Loading />;
   }
 

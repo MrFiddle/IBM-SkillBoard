@@ -31,7 +31,7 @@ const Sidebar = () => {
           setSelectedSection={setSelectedSection}
         />
         <SidebarSection
-          name={"My Team"}
+          name={"My Teams"}
           path={"/myteams"}
           icon={<AiOutlineApartment size={"1.6rem"} />}
           selectedSection={selectedSection}
