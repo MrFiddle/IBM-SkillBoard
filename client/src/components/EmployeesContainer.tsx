@@ -1,12 +1,20 @@
 import Employees from "./Employees/Employees";
 import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
-import Loading from "./Loading/Loading";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useState } from "react";
 
 const EmployeesContainer = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const queryClient = useQueryClient();
+
+  const changeTerm = (change: string) => {
+    setSearchTerm(change);
+    queryClient.invalidateQueries(["employees"]);
+  };
+
   const fetchEmployees = async () => {
     const response = await axios.get(
-      `${import.meta.env.VITE_SERVER_URL}/employees`,
+      `${import.meta.env.VITE_SERVER_URL}/search/employees/${searchTerm}`,
       { withCredentials: true }
     );
     return response.data;
@@ -14,21 +22,11 @@ const EmployeesContainer = () => {
 
   const { isLoading, error, data } = useQuery([`employees`], fetchEmployees);
 
-  if (isLoading || !data) {
-    <Loading type={true} mainColor={false} />;
-  }
-  if (error) {
-    return <p>Error</p>;
-  }
-
-  if (data) {
-    return (
-      <div>
-        <Employees employees={data} />;
-      </div>
-    );
-  }
-  return <Loading type={true} mainColor={false} />;
+  return (
+    <div>
+      <Employees employees={data} error={error} isLoading={isLoading} />;
+    </div>
+  );
 };
 
 export default EmployeesContainer;
