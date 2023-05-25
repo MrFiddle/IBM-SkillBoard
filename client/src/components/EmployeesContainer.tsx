@@ -21,7 +21,10 @@ const EmployeesContainer = () => {
     return response.data;
   };
 
-  const { isLoading, error, data } = useQuery([`employees`], fetchEmployees);
+  const { isLoading, error, data } = useQuery(
+    [`employees`, , `${searchTerm}`],
+    fetchEmployees
+  );
 
   return (
     <div className="flex flex-col h-[90vh]">
