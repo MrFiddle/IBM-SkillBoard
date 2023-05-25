@@ -2,6 +2,7 @@ import Employees from "./Employees/Employees";
 import axios from "axios";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
+import EmployeeSearchBar from "./EmployeesSearchBar/EmployeeSearchBar";
 
 const EmployeesContainer = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -23,7 +24,8 @@ const EmployeesContainer = () => {
   const { isLoading, error, data } = useQuery([`employees`], fetchEmployees);
 
   return (
-    <div>
+    <div className="flex flex-col h-[90vh]">
+      <EmployeeSearchBar changeTerm={changeTerm} />
       <Employees employees={data} error={error} isLoading={isLoading} />;
     </div>
   );

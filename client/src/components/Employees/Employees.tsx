@@ -12,32 +12,15 @@ interface Props {
 }
 
 const Employees = ({ employees, error, isLoading }: Props) => {
-  const [searchTerm, setSearchTerm] = React.useState("");
-
-  if ((isLoading || !employees) && !error) {
-    <Loading type={true} mainColor={false} />;
+  if (isLoading && !employees && !error) {
+    return <Loading type={true} mainColor={false} />;
   }
 
   if (error) {
     return <p>Error</p>;
   }
 
-  return (
-    <div className="flex flex-col h-[90vh]">
-      <div className="flex flex-row employees-filter">
-        <div className="shadow-md text-sm employees-filter-search">
-          <BsSearch />
-          <input
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onSubmit={() => console.log(searchTerm)}
-            placeholder="Search"
-          />
-        </div>
-      </div>
-      <EmployeesTable employees={employees} />
-    </div>
-  );
+  return <EmployeesTable employees={employees} />;
 };
 
 export default Employees;
