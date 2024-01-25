@@ -1,33 +1,113 @@
-import axios from "axios";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
 import RecommendedGrid from "./RecommendedGrid/RecommendedGrid";
-import Loading from "./Loading/Loading";
 
 const RecommendedContainer = () => {
-  const fetchCertificates = async () => {
-    const response = await axios.get(
-      `${import.meta.env.VITE_SERVER_URL}/certificates/all`,
-      { withCredentials: true }
-    );
-    return response.data;
-  };
+  // export interface Certificate {
+  //   id: string;
+  //   name: string;
+  //   type: string;
+  //   expiration_date: string;
+  // }
 
-  const { isLoading, error, data, refetch } = useQuery({
-    queryKey: ["dashboard", "all"],
-    queryFn: fetchCertificates,
-  });
+  // export interface CertificateResponse {
+  //   certificate: Certificate;
+  //   categories: Category[];
+  // }
+  // export interface Category {
+  //   id: string;
+  //   name: string;
+  // }
 
-  if (isLoading || !data) {
-    <Loading type={true} mainColor={false} />;
-  }
-  if (error) {
-    return <p>Error</p>;
-  }
+  // data is an array of CertificateResponse
+  const data = [
+    {
+      certificate: {
+        id: "certificate1",
+        name: "React",
+        type: "Course",
+        expiration_date: "2025-12-31",
+      },
+      categories: [
+        {
+          id: "category1",
+          name: "Frontend",
+        },
+      ],
+    },
+    {
+      certificate: {
+        id: "certificate2",
+        name: "Scrum Master",
+        type: "Course",
+        expiration_date: "2030-12-31",
+      },
+      categories: [
+        {
+          id: "category2",
+          name: "Agile",
+        },
+      ],
+    },
+    {
+      certificate: {
+        id: "certificate3",
+        name: "Python",
+        type: "Course",
+        expiration_date: "2021-12-31",
+      },
+      categories: [
+        {
+          id: "category3",
+          name: "Backend",
+        },
+      ],
+    },
+    {
+      certificate: {
+        id: "certificate4",
+        name: "AWS Cloud Practitioner",
+        type: "Course",
+        expiration_date: "2021-12-31",
+      },
+      categories: [
+        {
+          id: "category1",
+          name: "DevOps",
+        },
+      ],
+    },
+    {
+      certificate: {
+        id: "certificate5",
+        name: "Prompt Engineering",
+        type: "Course",
+        expiration_date: "2024-12-31",
+      },
+      categories: [
+        {
+          id: "category2",
+          name: "AI & Data Science",
+        },
+      ],
+    },
+    {
+      certificate: {
+        id: "certificate6",
+        name: "React Native",
+        type: "Course",
+        expiration_date: "2025-12-31",
+      },
+      categories: [
+        {
+          id: "category1",
+          name: "Frontend",
+        },
+      ],
+    },
+  ];
+
   if (data) {
     return <RecommendedGrid certificates={data} />;
   }
-
-  return <Loading type={true} mainColor={false} />;
 };
 
 export default RecommendedContainer;
