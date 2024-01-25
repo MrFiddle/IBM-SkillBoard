@@ -91,10 +91,13 @@ const DashboardTable = ({ data, changeType, isLoading, error }: Props) => {
       </div>
 
       <div className="w-full">
-        {(isLoading || (!data && !error)) && (
-          <Loading type={true} mainColor={false} />
-        )}
-        {error && <p>Error</p>}
+        <p
+          className="
+        font-semibold text-sm
+        "
+        >
+          Certification compatiblity
+        </p>
       </div>
 
       {data && (
