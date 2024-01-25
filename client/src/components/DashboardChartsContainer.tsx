@@ -4,26 +4,24 @@ import { useQuery } from "@tanstack/react-query";
 import Loading from "./Loading/Loading";
 
 const DashboardChartsContainer = () => {
-  const fetchCharts = async () => {
-    const response = await axios.get(
-      `${import.meta.env.VITE_SERVER_URL}/certificates/dashboard_charts`,
-      { withCredentials: true }
-    );
-    return response.data;
+  // export interface ChartContent {
+  //   title: string;
+  //   labels: Array<string>;
+  //   dataset: Array<number>;
+  // }
+
+  const data = {
+    left: {
+      title: "Teams",
+      labels: ["Frontend", "Backend", "Mobile", "Data Science"],
+      dataset: [10, 20, 30, 40],
+    },
+    right: {
+      title: "Employees",
+      labels: ["Frontend", "Backend", "Mobile", "Data Science"],
+      dataset: [30, 20, 10, 40],
+    },
   };
-
-  const { isLoading, error, data, refetch } = useQuery({
-    queryKey: ["dashboard_charts"],
-    queryFn: fetchCharts,
-  });
-
-  if (isLoading && !data && !error) {
-    return <Loading type={true} mainColor={false} />;
-  }
-
-  if (error) {
-    return <p>error</p>;
-  }
 
   return <DashboardCharts left={data.left} right={data.right} />;
 };
