@@ -12,14 +12,6 @@ interface Props {
 }
 
 const Employees = ({ employees, error, isLoading }: Props) => {
-  if (isLoading && !employees && !error) {
-    return <Loading type={true} mainColor={false} />;
-  }
-
-  if (error) {
-    return <p>Error</p>;
-  }
-
   return <EmployeesTable employees={employees} />;
 };
 
