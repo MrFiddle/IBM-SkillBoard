@@ -1,4 +1,3 @@
-import { useContext, useState } from "react";
 import "./Sidebar.css";
 import SidebarProfileContainer from "../SidebarProfileContainer";
 import SidebarSection from "../SidebarSection/SidebarSection";
@@ -6,41 +5,18 @@ import Logo from "../Logo";
 import { IoBarChartOutline } from "react-icons/io5";
 import { AiOutlineApartment, AiOutlineTeam } from "react-icons/ai";
 import { BsBoxArrowLeft, BsBookmarkStar } from "react-icons/bs";
-import { SESSION_KEY } from "../../../lib/constants";
-import { UserContext } from "../../contexts/UserContext";
+
 import { Link } from "react-router-dom";
-import { useMutation } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 interface Props {
   currentRoute: string;
 }
 
 const Sidebar = ({ currentRoute }: Props) => {
-  const { setUser } = useContext(UserContext);
   const selectedSection = currentRoute;
 
-  const navigate = useNavigate();
-
-  const logOutMutation = useMutation({
-    mutationFn: () => {
-      axios.defaults.withCredentials = true;
-      axios.defaults.headers.common["Cache-Control"] = "no-cache";
-      axios.defaults.headers.common["Pragma"] = "no-cache";
-      return axios.post(`${import.meta.env.VITE_SERVER_URL}/logout`, {
-        withCredentials: true,
-      });
-    },
-    onSuccess: () => {
-      localStorage.removeItem(SESSION_KEY);
-      setUser(null);
-      navigate("/");
-    },
-  });
-
   const handleLogOut = () => {
-    logOutMutation.mutate();
+    alert("You have been logged out");
   };
 
   return (
