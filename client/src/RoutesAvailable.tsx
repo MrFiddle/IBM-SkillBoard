@@ -15,28 +15,19 @@ const RoutesAvailable = () => {
   const location = useLocation();
   const currentRoute = location.pathname;
 
-  if (!user) {
-    return (
+  return (
+    <div className="flex">
+      <Sidebar currentRoute={currentRoute.split("/")[1]} />
       <Routes>
-        <Route path="/" element={<LoginScreen />}></Route>
-        <Route path="/*" element={<Navigate to="/" />} />
+        <Route path="/dashboard" element={<DashboardScreen />}></Route>
+        <Route path="/profile/:username" element={<ProfileScreen />}></Route>
+        <Route path="/myteams" element={<MyTeamsScreen />}></Route>
+        <Route path="/allemployees" element={<AllEmployeesScreen />}></Route>
+        <Route path="/recommended" element={<RecommendedScreen />}></Route>
+        <Route path="/*" element={<Navigate to="/dashboard" />}></Route>
       </Routes>
-    );
-  } else {
-    return (
-      <div className="flex">
-        <Sidebar currentRoute={currentRoute.split("/")[1]} />
-        <Routes>
-          <Route path="/dashboard" element={<DashboardScreen />}></Route>
-          <Route path="/profile/:username" element={<ProfileScreen />}></Route>
-          <Route path="/myteams" element={<MyTeamsScreen />}></Route>
-          <Route path="/allemployees" element={<AllEmployeesScreen />}></Route>
-          <Route path="/recommended" element={<RecommendedScreen />}></Route>
-          <Route path="/*" element={<Navigate to="/dashboard" />}></Route>
-        </Routes>
-      </div>
-    );
-  }
+    </div>
+  );
 };
 
 export default RoutesAvailable;

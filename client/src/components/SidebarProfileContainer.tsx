@@ -4,25 +4,15 @@ import { useQuery } from "@tanstack/react-query";
 import Loading from "./Loading/Loading";
 
 const SidebarProfileContainer = () => {
-  const fetchDetails = async () => {
-    const response = await axios.get(
-      `${import.meta.env.VITE_SERVER_URL}/employees/viewer`,
-      { withCredentials: true }
-    );
-    return response.data;
+  const data = {
+    id: "ninazaragoza",
+    name: "Nina Simone",
+    last_name: "Zaragoza Caballero",
+    email: "ninazaragoza@ibm.com",
+    role: "Administradora General",
   };
 
-  const { isLoading, error, data } = useQuery(["viewer"], fetchDetails);
-
-  if (isLoading && !data && !error) {
-    return <Loading type={false} mainColor={true} />;
-  }
-
-  if (error) {
-    return <p>error</p>;
-  }
-
-  return <SidebarProfile user={data.employee} />;
+  return <SidebarProfile user={data} />;
 };
 
 export default SidebarProfileContainer;
