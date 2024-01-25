@@ -1,7 +1,4 @@
 import SidebarProfile from "./SidebarProfile/SidebarProfile";
-import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
-import Loading from "./Loading/Loading";
 
 const SidebarProfileContainer = () => {
   const data = {
