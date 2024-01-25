@@ -1,9 +1,4 @@
-import {
-  Certificate,
-  CertificateResponse,
-  TeamWithManager,
-  User,
-} from "../../../lib/types";
+import { CertificateResponse, TeamWithManager, User } from "../../../lib/types";
 import ProfileInfoCard from "../ProfileInfoCard/ProfileInfoCard";
 import ProfileTeamCard from "../ProfileTeamCard/ProfileTeamCard";
 import ProfileCertifications from "../ProfileCertifications/ProfileCertifications";

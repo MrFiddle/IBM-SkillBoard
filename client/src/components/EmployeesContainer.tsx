@@ -2,14 +2,6 @@ import Employees from "./Employees/Employees";
 import EmployeeSearchBar from "./EmployeesSearchBar/EmployeeSearchBar";
 
 const EmployeesContainer = () => {
-  // export interface User {
-  //   id: string;
-  //   name: string;
-  //   last_name: string;
-  //   email: string;
-  //   role: string;
-  // }
-
   const data = [
     {
       id: "user1",

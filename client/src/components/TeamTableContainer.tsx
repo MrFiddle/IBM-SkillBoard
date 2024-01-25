@@ -1,33 +1,6 @@
 import TeamTable from "./TeamTable/TeamTable";
-import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
-import Loading from "./Loading/Loading";
 
 const TeamTableContainer = () => {
-  // export interface Team {
-  //   id: string;
-  //   name: string;
-  // }
-
-  // export interface TeamWithManager {
-  //   team: Team;
-  //   manager: User;
-  // }
-
-  // export interface TeamWithEmployeesManager {
-  //   team: Team;
-  //   employees: User[];
-  //   manager: User;
-  // }
-
-  // export interface User {
-  //   id: string;
-  //   name: string;
-  //   last_name: string;
-  //   email: string;
-  //   role: string;
-  // }
-
   const data = {
     teams: [
       {

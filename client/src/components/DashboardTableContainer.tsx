@@ -1,21 +1,6 @@
-import { useState } from "react";
 import DashboardTable from "./DashboardTable/DashboardTable";
-import axios from "axios";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 const DashboardTableContainer = () => {
-  // export interface Certificate {
-  //   id: string;
-  //   name: string;
-  //   type: string;
-  //   expiration_date: string;
-  // }
-
-  // export interface CertificateResponse {
-  //   certificate: Certificate;
-  //   categories: Category[];
-  // }
-
   const data = [
     {
       certificate: {
@@ -158,15 +143,11 @@ const DashboardTableContainer = () => {
         },
       ],
     },
-    // Add 7 more items as needed
-    // ...
   ];
 
   const changeType = (type: string) => {
     console.log(type);
   };
-
-  const [type, setType] = useState("all");
 
   return (
     <DashboardTable

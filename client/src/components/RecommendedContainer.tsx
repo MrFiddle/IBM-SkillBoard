@@ -1,23 +1,6 @@
 import RecommendedGrid from "./RecommendedGrid/RecommendedGrid";
 
 const RecommendedContainer = () => {
-  // export interface Certificate {
-  //   id: string;
-  //   name: string;
-  //   type: string;
-  //   expiration_date: string;
-  // }
-
-  // export interface CertificateResponse {
-  //   certificate: Certificate;
-  //   categories: Category[];
-  // }
-  // export interface Category {
-  //   id: string;
-  //   name: string;
-  // }
-
-  // data is an array of CertificateResponse
   const data = [
     {
       certificate: {

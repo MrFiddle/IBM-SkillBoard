@@ -1,12 +1,8 @@
 import CertificationRow from "../CertificationRow/CertificationRow";
-import { Certificate, CertificateResponse } from "../../../lib/types";
+import { CertificateResponse } from "../../../lib/types";
 import "./DashboardTable.css";
 import { BsCircleFill } from "react-icons/bs";
 import Select from "react-select";
-import { useState } from "react";
-import { Dispatch, SetStateAction } from "react";
-import { useQueryClient } from "@tanstack/react-query";
-import Loading from "../Loading/Loading";
 
 interface Props {
   data: CertificateResponse[];

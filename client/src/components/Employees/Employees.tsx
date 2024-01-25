@@ -1,9 +1,6 @@
-import React from "react";
-import { BsSearch } from "react-icons/bs";
 import EmployeesTable from "../EmployeesTable/EmployeesTable";
 import { User } from "../../../lib/types";
 import "./Employees.css";
-import Loading from "../Loading/Loading";
 
 interface Props {
   employees: User[];
@@ -11,7 +8,7 @@ interface Props {
   isLoading: boolean;
 }
 
-const Employees = ({ employees, error, isLoading }: Props) => {
+const Employees = ({ employees }: Props) => {
   return <EmployeesTable employees={employees} />;
 };
 

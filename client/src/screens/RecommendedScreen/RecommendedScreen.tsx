@@ -5,7 +5,7 @@ const RecommendedScreen = () => {
   return (
     <div className="background-screen overflow-hidden">
       <Header title={"Recommended"} />
-      <RecommendedContainer />
+      {RecommendedContainer() || null}
     </div>
   );
 };

@@ -1,32 +1,7 @@
 import Profile from "./Profile/Profile";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
 import Loading from "./Loading/Loading";
 
 const ProfileContainer = () => {
-  // export interface Team {
-  //   id: string;
-  //   name: string;
-  // }
-
-  // export interface TeamWithManager {
-  //   team: Team;
-  //   manager: User;
-  // }
-
-  // export interface Certificate {
-  //   id: string;
-  //   name: string;
-  //   type: string;
-  //   expiration_date: string;
-  // }
-
-  // export interface CertificateResponse {
-  //   certificate: Certificate;
-  //   categories: Category[];
-  // }
-
   const data = {
     employee: {
       id: "ninazaragoza",

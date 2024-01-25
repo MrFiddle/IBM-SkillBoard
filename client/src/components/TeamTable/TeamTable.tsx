@@ -1,4 +1,3 @@
-import React from "react";
 import TeamCard from "../TeamCard/TeamCard";
 import { TeamWithEmployeesManager } from "../../../lib/types";
 
